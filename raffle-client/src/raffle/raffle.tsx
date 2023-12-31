@@ -60,7 +60,7 @@ export const Raffle = () => {
           <ListItem num={1}>
             <div className="w-full ">
               <p>
-                Enter your email address by <b>January 9th</b>
+                Enter your email address by <b>January 22nd</b>
               </p>
               <br />
               <div className={`border-solid xs:p-6 border rounded-md flex flex-col gap-6 xs:mr-10 mr-4 p-4 ${isRegistered ? "border-green-300" : "border-gray-200"}`}>

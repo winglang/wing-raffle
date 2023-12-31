@@ -4,7 +4,7 @@ import {Raffle} from "./raffle/raffle";
 import {Wingly} from "./raffle/wingly";
 
 function App() {
-  const isPassedDeadline = new Date(2024, 0, 9).valueOf() < Date.now();
+  const isPassedDeadline = new Date(2024, 0, 23).valueOf() < Date.now();
   return (
     <>
       <Header />
