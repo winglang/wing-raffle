@@ -14,7 +14,6 @@ let website = new ex.ReactApp(
   buildDir: "/dist",
   localPort: 5173,
   startCommand: "npm run dev",
-  useBuildCommand: true
 );
 
 let b = new cloud.Bucket() as "raffle-bucket";
