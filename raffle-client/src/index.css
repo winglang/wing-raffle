@@ -3,12 +3,33 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "commitMono";
+  font-family: "TASA Orbiter Display";
   font-style: normal;
   font-weight: 400;
-  src: url("https://github.com/winglang/design/blob/main/Assets/winglang/fonts/CommitMono/CommitMono-400-Regular.otf");
+  src: url("/fonts/TASAOrbiterDisplay-Regular.otf");
+}
+
+@font-face {
+  font-family: "TASA Orbiter Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/TASAOrbiterDisplay-Medium.otf");
+}
+
+@font-face {
+  font-family: "TASA Orbiter Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/TASAOrbiterDisplay-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "TASA Orbiter Display";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/TASAOrbiterDisplay-Bold.otf");
 }
 
 body {
-  font-family: "General Sans", sans-serif;
+  font-family: "TASA Orbiter Display", sans-serif;
 }

@@ -17,7 +17,7 @@ export const Wingly = () => {
       <div className="w-full">
         <p className="text-4xl">Raffle is over!</p>
         <p>(But you can still watch the Wingly)</p>
-        <iframe className="m-auto" style={{minWidth: "65%", maxWidth: "100%", minHeight: "calc(65vw * 9 / 16)"}} src={videoUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <iframe className="m-auto mt-6" style={{minWidth: "65%", maxWidth: "100%", minHeight: "calc(65vw * 9 / 16)"}} src={videoUrl} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
       </div>
     </div>
   );

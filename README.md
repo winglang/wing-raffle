@@ -20,10 +20,10 @@ Start by installing all the dependencies with:
 
 Then, to start the simulator, run:
 
-`wing it wing/main.w`
+`wing it backend/main.w`
 
 - You can reach out the front end at localhost:5173.
 
 And to test, run:
 
-`wing test wing/main.w`
+`wing test backend/main.w`

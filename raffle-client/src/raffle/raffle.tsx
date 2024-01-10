@@ -1,9 +1,8 @@
 import {useMemo, useState} from "react";
 
 const RegisteredMessage = ({name}: {name?: string}) => (
-  <div className=" text-center py-12 font-semibold leading-8">
+  <div className="text-center py-14 font-semibold text-lg leading-8">
     <p>You're all set {name}&nbsp;✅</p>
-    <p>See you at the Wingly!</p>
   </div>
 );
 
@@ -26,18 +25,6 @@ const Button = ({onClick, children, disabled}: {onClick: React.MouseEventHandler
   );
 };
 
-const ListItem = ({num, children}: {num: number; children: JSX.Element}) => {
-  return (
-    <div className="flex items-start">
-      <div>
-        <span className="flex bg-gray-100 rounded-full border border-gray-300 h-8 w-8 items-center justify-center mx-2 text-gray-600">{num}</span>
-        <div />
-      </div>
-      {children}
-    </div>
-  );
-};
-
 export const Raffle = () => {
   const [name, setName] = useState(localStorage.getItem("wingly-user-name") ?? "");
   const [email, setEmail] = useState("");
@@ -53,52 +40,33 @@ export const Raffle = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center flex-col lg:flex-row">
-        <img src="/cup.png" className="w-2/3" style={{maxWidth: 500}} />
-        <div className="flex flex-col gap-6">
-          <p className=" font-semibold">How to Participate?</p>
-          <ListItem num={1}>
-            <div className="w-full ">
-              <p>
-                Enter your email address by <b>January 22nd</b>
-              </p>
-              <br />
-              <div className={`border-solid xs:p-6 border rounded-md flex flex-col gap-6 xs:mr-10 mr-4 p-4 ${isRegistered ? "border-green-300" : "border-gray-200"}`}>
-                {isRegistered ? (
-                  <RegisteredMessage name={name} />
-                ) : (
-                  <>
-                    <Input type="text" name="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                    <Input type="email" name="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <Button disabled={!isValid} onClick={submit}>
-                      Sign me up!
-                    </Button>
-                  </>
-                )}
-              </div>
+      <div className="flex flex-col justify-center items-center gap-6 text-center">
+        <h1 className="md:text-6xl text-4xl font-bold mt-4">The Wingnut Mug Raffle</h1>
+        <h3 className="text-xl font-semibold">
+          Enter your name below by January 22nd for a chance to join the Wingly
+          <br />
+          Update while sipping from a custom-made Winglang mug!
+        </h3>
+      </div>
+      <div className="flex justify-center items-center flex-col lg:flex-row gap-8">
+        <img src="/cup.png" className="lg:w-2/3 w-1/2 lg:m-0 mt-6" style={{maxWidth: 550}} />
+        <div className="flex flex-col gap-6 justify-center items-center">
+          <div className="sm:w-2/3 w-full">
+            <div className={`border-solid xs:p-6 border rounded-md flex flex-col gap-6 xs:mr-10 mr-4 p-4 ${isRegistered ? "border-green-300" : "border-gray-200"}`}>
+              {isRegistered ? (
+                <RegisteredMessage name={name} />
+              ) : (
+                <>
+                  <Input type="text" name="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                  <Input type="email" name="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <Button disabled={!isValid} onClick={submit}>
+                    Sign me up!
+                  </Button>
+                </>
+              )}
             </div>
-          </ListItem>
-          <ListItem num={2}>
-            <div>
-              <p>
-                Tune in to our{" "}
-                <a className="text-teal-400 font-bold" href="https://www.twitch.tv/winglangio">
-                  Wingly show
-                </a>{" "}
-                on <b>January 23rd</b> to discover the 5 lucky winners!
-              </p>
-            </div>
-          </ListItem>
-          <ListItem num={3}>
-            <p>
-              Join the fun on <b>February 6th</b>! Watch our{" "}
-              <a className="text-teal-400 font-bold" href="https://www.twitch.tv/winglangio">
-                show
-              </a>
-              - sip from your Wingly mug,
-              <br /> and actively participate in all the excitement! 😻😻🔥
-            </p>
-          </ListItem>
+            <p className="text-xl mt-6 pr-4">Tune in to the Wingly Update on January 23rd to see if you’re among the five lucky winners!</p>
+          </div>
         </div>
       </div>
     </>
